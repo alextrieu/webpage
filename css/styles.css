@@ -1,0 +1,394 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .block {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .primary-header {
+    text-transform: uppercase;
+    color: lightcoral;
+  }
+  
+  /* navigation */
+  
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  li {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  li:last-child{
+    font-size: 1.5rem;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  ul li:first-child {
+    margin-right: auto;
+  }
+  
+  .introduction {
+    height: 500px;
+  }
+  
+  .introduction:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: inherit;
+    width: 100vw;
+    z-index: -1;
+    background: url("https://i.stack.imgur.com/SvWWN.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  header {
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .headers {
+    position: relative;
+    margin-right: 15px;
+    color: white;
+    font-family: Arial;
+  }
+  
+  .headers::before {
+    content: "";
+    position: absolute;
+    outline: 10px solid lightcoral;
+    width: 250px;
+    height: 205px;
+    right: 100px;
+    top: 0px;
+  }
+  
+  .headers h1 {
+    margin-bottom: 15px;
+    font-size: 40px;
+  }
+  
+  .headers h1 {
+    width: 80%;
+  }
+  
+  .headers h1,
+  .headers p {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .introduction-header-btn {
+    padding: 15px 25px;
+    border: none;
+    text-transform: uppercase;
+    z-index: 1;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    font-family: Arial;
+  }
+  
+  /* About */
+  
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .about-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-intro div p {
+      width: 80%;
+      margin: 0 auto;
+  }
+  
+  .about-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .about-images img {
+    flex: 1;
+  }
+  
+  .about-learn-btn {
+    border: none;
+    padding: 10px 30px;
+    background: none;
+    border: 3px solid black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+  
+  /* Our Services */
+  
+  .our-services-container {
+    background-color: lightgray;
+  }
+  
+  .our-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;
+  }
+  
+  .projects {
+    border: 1px solid black;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .projects p {
+    width: 50%;
+  }
+  
+  .project-inquiry {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px 20px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+  
+  /* Projects Preview */
+  
+  .project-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .project-header {
+    text-align: center;
+  }
+  
+  .project-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .project-button a {
+    background: none;
+    border: 3px solid black;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  .project-button a:last-child {
+    border: 3px solid lightcoral;
+    color: lightcoral;
+    padding: 10px 15px;
+  }
+  
+  /* Selling Point */
+  
+  .success-story {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .success-story-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .success-story-header p {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .success-story-platforms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .success-story-platform-icons:nth-child(3) {
+    width: 350px;
+    height: 350px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .request-quote-btn {
+    position: absolute;
+    bottom: -20px;
+    border: none;
+    background-color: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+  
+  .success-story-platform-icons:nth-child(3) h1 {
+    font-size: 60px;
+    color: lightcoral;
+  }
+  
+  .success-story-text-guarantee {
+    line-height: 30px;
+    text-align: center;
+  }
+  
+  .success-story-block {
+    min-height: 500px;
+  }
+
+  .success-background {
+    background-image: url(https://iglowstudioz.com/wp-content/uploads/2021/05/Abstract-Ambient-Light-Background-Day-Blue-768x544.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50%;
+  }
+
+@media (min-width: 960px) {
+  .about {
+    flex-direction: row;
+    min-height: 300px;
+    justify-content: space-between;
+  }
+
+  .about-intro {
+    align-items:flex-start;
+    text-align: start;
+    justify-content: center;
+  }
+
+  .about-intro div p {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .about-images {
+    align-items: center;
+  }
+
+  .about-images img {
+    width: 125px;
+  }
+
+  .project-preview {
+    padding: 30px 0 40px 0;
+  }
+
+  .project-images {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .project-images img {
+    flex: 1 400px;
+  }
+
+  .success-story {
+    gap: 50px;
+    padding-top: 20px;
+  }
+
+  .success-story-platforms {
+    flex-direction: row;
+  }
+
+  .success-story-platform-icons img {
+    max-width: 100%;
+    height: 150px;
+  }
+
+  .success-story-platform-icons:nth-child(3) {
+    height: 250px;
+    width: 500px;
+  }
+
+  .portfolio {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .success-background {
+    height: 300px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .portfolio {
+    flex-direction: row;
+    flex-wrap: wrap; 
+  }
+  
+  .projects {
+    flex: 1 200px;
+  }
+}
