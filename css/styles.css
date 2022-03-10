@@ -99,7 +99,7 @@
     z-index: 1;
   }
   
-  .introduction-header-btn {
+  #introduction-header-btn {
     padding: 15px 25px;
     border: none;
     text-transform: uppercase;
