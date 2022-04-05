@@ -35,15 +35,18 @@ button.addEventListener("mouseover", function( event ) {
 // Dialog
 
 const dialog = document.querySelector('.dialog');
+const dialogContainer = document.querySelector('.dialog-container')
 const navbar = document.querySelector('.fa-bars');
 const exitDialog = document.querySelector('.exit-btn');
 
 navbar.addEventListener('click', function() {
   dialog.style.visibility = "visible";
+  dialogContainer.style.visibility = "visible";
 });
 
 exitDialog.addEventListener("click", function() {
     dialog.style.visibility = "hidden";
+    dialogContainer.style.visibility = "visible";
 });
 
 
@@ -51,6 +54,7 @@ exitDialog.addEventListener("click", function() {
 
 const fetchAPI = fetch('https://catfact.ninja/fact');
 const catFacts = document.getElementById('cat-facts')
+
 fetchAPI
   .then( response => {
     if (!response.ok) {
