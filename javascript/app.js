@@ -24,8 +24,6 @@ function setHeaderColor() {
 
 window.addEventListener('DOMContentLoaded', setHeaderColor);
 
-
-
 // Dialog
 
 const dialog = document.querySelector('.dialog');
@@ -51,8 +49,22 @@ window.addEventListener('DOMContentLoaded', dialogDisplay);
 
 const CAT_FACTS_URL = 'https://catfact.ninja/fact';
 const catFacts = document.getElementById('cat-facts')
+const catFactsBtn = document.querySelector('.about-learn-btn');
+
+// loading div
+
+const loader = document.querySelector('#loading');
+
+function displayLoading() {
+  loader.classList.add('display');
+}
+
+function hideLoading() {
+  loader.classList.remove('display');
+}
 
 function loadCatFacts() {
+  displayLoading()
   fetch(CAT_FACTS_URL)
   .then( response => {
     if (!response.ok) {
@@ -62,7 +74,8 @@ function loadCatFacts() {
   })
   .then( json => {
     catFacts.innerText = json.fact;
+    hideLoading()
   });
 }
 
-window.addEventListener('DOMContentLoaded', loadCatFacts);
+document.addEventListener('click', loadCatFacts)
