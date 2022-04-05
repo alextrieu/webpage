@@ -52,10 +52,10 @@ exitDialog.addEventListener("click", function() {
 
 // Promise API
 
-const fetchAPI = fetch('https://catfact.ninja/fact');
+const CAT_FACTS_URL = 'https://catfact.ninja/fact';
 const catFacts = document.getElementById('cat-facts')
 
-fetchAPI
+fetch(CAT_FACTS_URL)
   .then( response => {
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
