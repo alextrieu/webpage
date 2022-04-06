@@ -22,8 +22,6 @@ function setHeaderColor() {
     }, false);
 }
 
-window.addEventListener('DOMContentLoaded', setHeaderColor);
-
 // Dialog
 
 const dialog = document.querySelector('.dialog');
@@ -43,7 +41,12 @@ function dialogDisplay() {
   });
 }
 
-window.addEventListener('DOMContentLoaded', dialogDisplay);
+// DOMContentLoaded with multiple function calls
+
+window.addEventListener('DOMContentLoaded', function() {
+  dialogDisplay();
+  setHeaderColor();
+});
 
 // Promise API
 
@@ -70,6 +73,7 @@ function loadCatFacts() {
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
     }
+    // hideLoading()
     return response.json();
   })
   .then( json => {
