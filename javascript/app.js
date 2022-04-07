@@ -83,3 +83,49 @@ function loadCatFacts() {
 }
 
 document.addEventListener('click', loadCatFacts)
+
+/* Google Maps */
+
+const map = document.getElementById('map');
+const city = document.getElementById('city');
+const country = document.getElementById('country');
+const latitude = document.querySelector("[id='latitude']");
+const longitude = document.getElementById('longitude');
+const errorMsg = document.getElementById('error');
+
+const mapKey = 'AIzaSyBm9X31mMtaVcWMdMT5z2yA8fSKMgjy-ug';
+const geoKey = 'AIzaSyD2V9V-KLPmdmSVoh-8pbaCQX5B0sxUhC0'
+
+function successCallback(position) {
+  const userLatitude = position.coords.latitude;
+  const userLongitude = position.coords.longitude;
+  map.setAttribute('src', `https://maps.googleapis.com/maps/api/staticmap?center=${userLatitude},${userLongitude}&zoom=14&size=400x400&key=${mapKey}`);
+  latitude.innerHTML = `Latitude: ${userLatitude}`;
+  longitude.innerHTML = `Longitude: ${userLongitude}`;
+
+  fetch (`https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=${geoKey}`)
+  .then(response => response.json())
+  .then(data => {
+    // city.innerHTML = `City: ${data.results[8].address_components[1].long_name}`
+    // country.innerHTML = `Country: ${data.results[12].address_components[0].long_name}`
+    console.log(data);
+    let parts = data.results[0].address_components;
+    parts.forEach(part => {
+      if (part.types.includes("country")) {
+        country.innerHTML = `Country: ${part.long_name}`
+      }
+    });
+    parts.forEach(part => {
+      if (part.types.includes("locality")) {
+        city.innerHTML = `City: ${part.long_name}`
+      }
+    });
+  })
+}
+
+const errorCallback = (error) => {
+  console.error(error);
+  errorMsg.innerHTML = "Permission Denied: Unable to access location";
+};
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
