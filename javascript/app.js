@@ -129,10 +129,12 @@ function successCallback(position) {
   const visibility = document.getElementById('visibility');
   const sunrise = document.getElementById('sunrise');
   const sunset = document.getElementById('sunset');
+  const weatherCity = document.getElementById('weather-city')
 
   fetch(weatherAPI)
   .then(response => response.json())
   .then(data => {
+    weatherCity.innerHTML = data.name;
     weatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`);
     currentWeather.innerHTML = data.weather[0].main;
     // remove decimal points

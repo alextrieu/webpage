@@ -473,3 +473,7 @@
 .sub-specs:first-child {
   border-left: none;
 }
+
+#weather-city {
+  text-transform: uppercase;
+}
