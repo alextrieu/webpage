@@ -82,7 +82,7 @@ function loadCatFacts() {
   });
 }
 
-document.addEventListener('click', loadCatFacts)
+catFactsBtn.addEventListener('click', loadCatFacts)
 
 /* Google Maps */
 
@@ -94,7 +94,7 @@ const longitude = document.getElementById('longitude');
 const errorMsg = document.getElementById('error');
 
 const mapKey = 'AIzaSyBm9X31mMtaVcWMdMT5z2yA8fSKMgjy-ug';
-const geoKey = 'AIzaSyD2V9V-KLPmdmSVoh-8pbaCQX5B0sxUhC0'
+const geoKey = 'AIzaSyD2V9V-KLPmdmSVoh-8pbaCQX5B0sxUhC0';
 
 function successCallback(position) {
   const userLatitude = position.coords.latitude;
