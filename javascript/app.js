@@ -108,7 +108,6 @@ function successCallback(position) {
   .then(data => {
     // city.innerHTML = `City: ${data.results[8].address_components[1].long_name}`
     // country.innerHTML = `Country: ${data.results[12].address_components[0].long_name}`
-    console.log(data);
     let parts = data.results[0].address_components;
     parts.forEach(part => {
       if (part.types.includes("country")) {
@@ -124,7 +123,6 @@ function successCallback(position) {
 }
 
 const errorCallback = (error) => {
-  console.error(error);
   errorMsg.innerHTML = "Permission Denied: Unable to access location";
 };
 

@@ -170,28 +170,6 @@
     gap: 20px;
   }
   
-  /* .portfolio {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 5px;
-  } */
-  
-  /* .projects {
-    border: 1px solid black;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  .projects p {
-    width: 50%;
-  } */
-  
   .project-inquiry {
     text-decoration: none;
     border: 1px solid black;
@@ -371,26 +349,9 @@
     width: 500px;
   }
 
-  /* .portfolio {
-    flex-direction: row;
-    flex-wrap: nowrap;
-  } */
-
   .success-background {
     height: 300px;
   }
-}
-
-
-@media (min-width: 768px) {
-  /* .portfolio {
-    flex-direction: row;
-    flex-wrap: wrap; 
-  }
-  
-  .projects {
-    flex: 1 200px;
-  } */
 }
 
 
@@ -425,8 +386,8 @@
   width: 80%;
   height: 100%;
   display: flex;
-  justify-content: center; /*centers items on the line (the x-axis by default)*/
-  align-items: center; /*centers items on the cross-axis (y by default)*/
+  justify-content: center; 
+  align-items: center; 
   visibility: hidden;
 }
 
