@@ -164,7 +164,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     justify-content: space-around;
     padding: 20px;
     gap: 20px;
@@ -433,4 +432,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* Maps */
+
+.user-info {
+  text-align: center;
+}
+
+/* Weather */
+
+.user-essentials {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#display-weather {
+  height: 400px;
+  width: 400px;
+  background-color: lightblue;
+  text-align: center;
+  color: white;
+}
+
+.sub-info {
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.sub-specs {
+  border-left: 1px solid white;
+  padding: 10px;
+}
+
+.sub-specs:first-child {
+  border-left: none;
 }

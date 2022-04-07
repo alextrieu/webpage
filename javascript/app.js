@@ -89,7 +89,7 @@ catFactsBtn.addEventListener('click', loadCatFacts)
 const map = document.getElementById('map');
 const city = document.getElementById('city');
 const country = document.getElementById('country');
-const latitude = document.querySelector("[id='latitude']");
+const latitude = document.getElementById('latitude');
 const longitude = document.getElementById('longitude');
 const errorMsg = document.getElementById('error');
 
@@ -106,8 +106,6 @@ function successCallback(position) {
   fetch (`https://maps.googleapis.com/maps/api/geocode/json?latlng=${position.coords.latitude},${position.coords.longitude}&key=${geoKey}`)
   .then(response => response.json())
   .then(data => {
-    // city.innerHTML = `City: ${data.results[8].address_components[1].long_name}`
-    // country.innerHTML = `Country: ${data.results[12].address_components[0].long_name}`
     let parts = data.results[0].address_components;
     parts.forEach(part => {
       if (part.types.includes("country")) {
@@ -120,6 +118,47 @@ function successCallback(position) {
       }
     });
   })
+
+  /* Weather API */
+  const weatherKey = '3ee574c55914c5d49a060ef299e6985e';
+  const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${userLatitude}&lon=${userLongitude}&appid=${weatherKey}&units=metric`
+  const weatherIcon = document.getElementById('weather-icon');
+  const currentWeather = document.getElementById('current-weather')
+  const degreeCelcius = document.getElementById('degrees');
+  const humidity = document.getElementById('humidity');
+  const visibility = document.getElementById('visibility');
+  const sunrise = document.getElementById('sunrise');
+  const sunset = document.getElementById('sunset');
+
+  fetch(weatherAPI)
+  .then(response => response.json())
+  .then(data => {
+    weatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`);
+    currentWeather.innerHTML = data.weather[0].main;
+    // remove decimal points
+    const removedDecimalTemp = Math.trunc(data.main.temp)
+    degreeCelcius.innerHTML = `${removedDecimalTemp} °C`;
+    humidity.innerHTML = `Humidity ${data.main.humidity}%`;
+    // metres to km conversion 
+    const km = data.visibility / 1000;
+    visibility.innerHTML = `Visibility ${km.toFixed()}KM`;
+    // unix to local time conversion 
+    function conversion(unix) {
+      let unix_timestamp = unix
+      var date = new Date(unix_timestamp * 1000);
+      var hours = date.getHours();
+      var minutes = "0" + date.getMinutes();
+      var seconds = "0" + date.getSeconds();
+      var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+      return formattedTime;
+    }
+
+    const sunriseTime = conversion(data.sys.sunrise).slice(0, -3);
+    const sunsetTime = conversion(data.sys.sunset).slice(0, -3);
+    sunrise.innerHTML = `Sunrise ${sunriseTime}AM`;
+    sunset.innerHTML = `Sunset ${sunsetTime}PM`;
+  });
+  
 }
 
 const errorCallback = (error) => {
@@ -127,3 +166,5 @@ const errorCallback = (error) => {
 };
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+

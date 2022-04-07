@@ -68,14 +68,38 @@
                     <h5 class="primary-header">what we do</h5>
                     <h3>Our Services</h3>
                 </div>
-                <img id="map" src="https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=14&size=400x400&key=AIzaSyBm9X31mMtaVcWMdMT5z2yA8fSKMgjy-ug">
-                <div class="user-info">
-                    <h4 id="city"></h4>
-                    <h4 id="country"></h4>
-                    <h4 id="latitude"></h4>
-                    <h4 id="longitude"></h4>
-                    <h4 id="error"></h4>
-                </div><!-- end user info -->
+                <div class="user-essentials">
+                    <div class="map-info">
+                    <img id="map" src="https://maps.googleapis.com/maps/api/staticmap?center=40.714728,-73.998672&zoom=14&size=400x400&key=AIzaSyBm9X31mMtaVcWMdMT5z2yA8fSKMgjy-ug">
+                        <div class="user-info">
+                            <h4 id="city"></h4>
+                            <h4 id="country"></h4>
+                            <h4 id="latitude"></h4>
+                            <h4 id="longitude"></h4>
+                            <h4 id="error"></h4>
+                        </div><!-- end user info -->
+                    </div>
+                    <div id="display-weather">
+                        <h2>Today's Report</h2>
+                        <img id="weather-icon"/>
+                        <h2 id="current-weather"></h2>
+                        <h1 id="degrees"></h1>
+                        <div class="sub-info">
+                            <div class="sub-specs">
+                                <h3 id="humidity"></h3>
+                            </div>
+                            <div class="sub-specs">
+                                <h3 id="visibility"></h3>
+                            </div>
+                            <div class="sub-specs">
+                                <h3 id="sunrise"></h3>
+                            </div>
+                            <div class="sub-specs">
+                                <h3 id="sunset"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- user-essentials -->
                 <div>
                     <a href="#" class="project-inquiry">contact us</a>
                 </div>
